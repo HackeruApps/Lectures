@@ -10,15 +10,31 @@ import UIKit
 
 class SlotMachineViewController: UIViewController {
     
-    let fruit = ["🍍", "🍌", "🍒", "🍊", "🍉", "🍓", "𝟽"]
+    lazy var images:[UIImage?] = {
+        var arr:[UIImage?] = []
+        for i in 0...9{
+            arr.append(UIImage(named: "i\(i)"))
+        }
+        return arr
+    }()
+    
+   // let fruit = ["🍍", "🍌", "🍒", "🍊", "🍉", "🍓", "𝟽"]
     
     @IBOutlet weak var slotMachine: UIPickerView!
     
     @IBAction func spin(_ sender: UIButton) {
+
+        for i in 0..<slotMachine.numberOfComponents{
+            let r = Int.nextRand(max: slotMachine.numberOfRows(inComponent: i))
+            
+            //select row in component
+            slotMachine.selectRow(r, inComponent: i, animated: true)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        slotMachine.isUserInteractionEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +53,16 @@ extension SlotMachineViewController : UIPickerViewDataSource{
 }
 
 extension SlotMachineViewController: UIPickerViewDelegate{
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return fruit[row % fruit.count]
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let img = images[row % images.count] //UIImage?
+        
+        let iv = UIImageView(image: img)
+        return iv
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
     }
 }
 
