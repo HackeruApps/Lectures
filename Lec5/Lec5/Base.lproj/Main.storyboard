@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lec5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LkY-WC-bWe">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-fA-22i">
+                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="631"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zco-Jk-ckx">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905682144104" green="1" blue="0.67907697920545318" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ah-hp-e9N"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1S4-1S-b5y">
+                                                <rect key="frame" x="0.0" y="213" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9L-Ig-Yb1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQd-D6-T6s">
+                                                <rect key="frame" x="0.0" y="426" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQr-hf-cvS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKX-pB-uSs">
+                                        <rect key="frame" x="183.5" y="0.0" width="175.5" height="631"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86P-jt-Akj">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="daU-Eu-Zk3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnY-fB-l9a">
+                                                <rect key="frame" x="0.0" y="213" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qt5-b7-apC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sL-ta-pLP">
+                                                <rect key="frame" x="0.0" y="426" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <state key="highlighted" image="banana"/>
+                                                <connections>
+                                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSb-e3-BSu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LkY-WC-bWe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="7rD-AO-jnd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LkY-WC-bWe" secondAttribute="bottom" constant="8" id="GZB-wU-qre"/>
+                            <constraint firstItem="LkY-WC-bWe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="JcQ-XM-7jw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LkY-WC-bWe" secondAttribute="trailing" constant="8" id="f1u-0C-iux"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="cards" destination="zco-Jk-ckx" collectionClass="NSMutableArray" id="WqZ-r1-e3L"/>
+                        <outletCollection property="cards" destination="1S4-1S-b5y" collectionClass="NSMutableArray" id="Bvr-0O-Jcm"/>
+                        <outletCollection property="cards" destination="JQd-D6-T6s" collectionClass="NSMutableArray" id="gRs-dZ-C62"/>
+                        <outletCollection property="cards" destination="86P-jt-Akj" collectionClass="NSMutableArray" id="cda-Fx-9YN"/>
+                        <outletCollection property="cards" destination="jnY-fB-l9a" collectionClass="NSMutableArray" id="bXj-Dv-jCw"/>
+                        <outletCollection property="cards" destination="4sL-ta-pLP" collectionClass="NSMutableArray" id="3x6-8K-Ale"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banana" width="96" height="96"/>
+        <image name="square" width="96" height="96"/>
+    </resources>
+</document>

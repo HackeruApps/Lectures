@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gjj-sg-I0I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tj5-4w-L6B">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E0n-8P-H0Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="631"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BV-As-ckf">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="pear"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAn-XI-OIa">
+                                                <rect key="frame" x="0.0" y="213" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="plums"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aha-7l-0KG">
+                                                <rect key="frame" x="0.0" y="426" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="pear"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h8v-Pq-TKp">
+                                        <rect key="frame" x="183.5" y="0.0" width="175.5" height="631"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2W-cQ-QHu">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="pineapple"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-jS-7zU">
+                                                <rect key="frame" x="0.0" y="213" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="pineapple"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-XP-nCE">
+                                                <rect key="frame" x="0.0" y="426" width="175.5" height="205"/>
+                                                <color key="backgroundColor" red="0.52881905679999996" green="1" blue="0.67907697919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square"/>
+                                                <state key="highlighted" image="banana"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tj5-4w-L6B" firstAttribute="leading" secondItem="BLw-wZ-kkY" secondAttribute="leading" constant="8" id="c7J-Gf-hjX"/>
+                            <constraint firstItem="BLw-wZ-kkY" firstAttribute="bottom" secondItem="tj5-4w-L6B" secondAttribute="bottom" constant="8" id="hXa-Hn-M1R"/>
+                            <constraint firstItem="tj5-4w-L6B" firstAttribute="top" secondItem="BLw-wZ-kkY" secondAttribute="top" constant="8" id="l1i-QP-9zO"/>
+                            <constraint firstItem="BLw-wZ-kkY" firstAttribute="trailing" secondItem="tj5-4w-L6B" secondAttribute="trailing" constant="8" id="puE-cG-lVV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BLw-wZ-kkY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banana" width="96" height="96"/>
+        <image name="pear" width="96" height="96"/>
+        <image name="pineapple" width="96" height="96"/>
+        <image name="plums" width="96" height="96"/>
+        <image name="square" width="96" height="96"/>
+    </resources>
+</document>

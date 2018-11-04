@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lec5PracticeSegue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GBU-ZN-RV6">
+                                <rect key="frame" x="140" y="105" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="kes-3b-Qr9"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9v-3T-BMs">
+                                <rect key="frame" x="182" y="52" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m56-He-pJH">
+                                <rect key="frame" x="123" y="166" width="128" height="29"/>
+                                <segments>
+                                    <segment title="תושב"/>
+                                    <segment title="אורח"/>
+                                    <segment title="תייר"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segemented:" destination="BYZ-38-t0r" eventType="valueChanged" id="EKp-HU-nrE"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-fc-Ida">
+                                <rect key="frame" x="154" y="226" width="66" height="30"/>
+                                <state key="normal" title="בצע הזמנה"/>
+                                <connections>
+                                    <action selector="go:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JS-9w-k3i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kdF-fc-Ida" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Qo-0H-ClE"/>
+                            <constraint firstItem="m56-He-pJH" firstAttribute="top" secondItem="GBU-ZN-RV6" secondAttribute="bottom" constant="32" id="7hh-vm-DJ1"/>
+                            <constraint firstItem="m56-He-pJH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LpQ-j3-k5B"/>
+                            <constraint firstItem="kdF-fc-Ida" firstAttribute="top" secondItem="m56-He-pJH" secondAttribute="bottom" constant="32" id="Mca-AN-UI7"/>
+                            <constraint firstItem="GBU-ZN-RV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QRH-wb-JQs"/>
+                            <constraint firstItem="GBU-ZN-RV6" firstAttribute="top" secondItem="R9v-3T-BMs" secondAttribute="bottom" constant="32" id="ekl-5a-rQn"/>
+                            <constraint firstItem="R9v-3T-BMs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="hK1-0B-wXk"/>
+                            <constraint firstItem="R9v-3T-BMs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ruK-XN-lf7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardTypeSegementedControl" destination="m56-He-pJH" id="4ox-lY-5iI"/>
+                        <outlet property="label" destination="R9v-3T-BMs" id="OKI-OD-i2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="90"/>
+        </scene>
+    </scenes>
+</document>
