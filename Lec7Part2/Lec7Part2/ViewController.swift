@@ -17,15 +17,9 @@ class ViewController: UIViewController {
 
         ds.getSongs { (songs) in
             //songs is an array
+            print(songs)
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
