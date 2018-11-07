@@ -1,6 +1,6 @@
 import Foundation
 //struct Feed
-struct ItunesSong {
+struct ItunesSong:Codable {
     let artistName:String
     let releaseDate:String
     let name:String
@@ -9,3 +9,27 @@ struct ItunesSong {
     let artworkUrl100:String
     let url:String
 }
+
+struct Feed:Codable {
+    let title:String
+    let updated:String
+    let results:[ItunesSong]
+}
+
+struct RssResult:Codable {
+    let feed:Feed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
