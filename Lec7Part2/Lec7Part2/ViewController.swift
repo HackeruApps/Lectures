@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Lec7
+//  Lec7Part2
 //
 //  Created by hackeru on 07/11/2018.
 //  Copyright © 2018 hackeru. All rights reserved.
@@ -12,14 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        let gcd = GCDDemos()
         
-        gcd.goWeather { temp in
-            //label.text = temp
+        let ds = ItunesDataSource()
+
+        ds.getSongs { (songs) in
+            //songs is an array
         }
-        
-        //...
         
     }
 
