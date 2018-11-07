@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ds = ItunesDataSource()
+        let ds = ItunesEasy()
 
         ds.getSongs { (songs) in
             //songs is an array
             print(songs)
+            //
         }
         
     }

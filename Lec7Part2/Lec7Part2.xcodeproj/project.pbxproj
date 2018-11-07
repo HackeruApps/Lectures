@@ -14,6 +14,9 @@
 		6D04F33B2192E23500223210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D04F3392192E23500223210 /* LaunchScreen.storyboard */; };
 		6D04F3432192E37200223210 /* ItunesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F3422192E37200223210 /* ItunesDataSource.swift */; };
 		6D04F3472192E77000223210 /* ItunesSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F3462192E77000223210 /* ItunesSong.swift */; };
+		6D04F34921931BD600223210 /* ItunesEasy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F34821931BD600223210 /* ItunesEasy.swift */; };
+		6D04F34B2193216D00223210 /* SongsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F34A2193216D00223210 /* SongsTableViewController.swift */; };
+		6D04F34D219321F700223210 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F34C219321F700223210 /* SongTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		6D04F33C2192E23500223210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D04F3422192E37200223210 /* ItunesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesDataSource.swift; sourceTree = "<group>"; };
 		6D04F3462192E77000223210 /* ItunesSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSong.swift; sourceTree = "<group>"; };
+		6D04F34821931BD600223210 /* ItunesEasy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesEasy.swift; sourceTree = "<group>"; };
+		6D04F34A2193216D00223210 /* SongsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewController.swift; sourceTree = "<group>"; };
+		6D04F34C219321F700223210 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				6D04F33C2192E23500223210 /* Info.plist */,
 				6D04F3422192E37200223210 /* ItunesDataSource.swift */,
 				6D04F3462192E77000223210 /* ItunesSong.swift */,
+				6D04F34821931BD600223210 /* ItunesEasy.swift */,
+				6D04F34A2193216D00223210 /* SongsTableViewController.swift */,
+				6D04F34C219321F700223210 /* SongTableViewCell.swift */,
 			);
 			path = Lec7Part2;
 			sourceTree = "<group>";
@@ -142,7 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D04F34B2193216D00223210 /* SongsTableViewController.swift in Sources */,
+				6D04F34921931BD600223210 /* ItunesEasy.swift in Sources */,
 				6D04F3332192E23500223210 /* ViewController.swift in Sources */,
+				6D04F34D219321F700223210 /* SongTableViewCell.swift in Sources */,
 				6D04F3312192E23500223210 /* AppDelegate.swift in Sources */,
 				6D04F3472192E77000223210 /* ItunesSong.swift in Sources */,
 				6D04F3432192E37200223210 /* ItunesDataSource.swift in Sources */,
