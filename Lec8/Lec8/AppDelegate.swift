@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Lec2Part2
+//  Lec8
 //
-//  Created by hackeru on 21/10/2018.
+//  Created by hackeru on 11/11/2018.
 //  Copyright © 2018 hackeru. All rights reserved.
 //
 
