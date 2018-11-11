@@ -17,7 +17,10 @@ class MovieDataSource {
             
         let rssResult = try! JSONDecoder().decode(RssResult.self, from: data!)
 
-        self.delegate?.moviesArrived(rss: rssResult)
+        //callback on the UI Thread.
+        DispatchQueue.main.async {
+                self.delegate?.moviesArrived(rss: rssResult)
+        }
             
         }.resume()
     }
@@ -28,13 +31,9 @@ class MovieDataSource {
 protocol MovieDataSourceDelegate: class {
     func moviesArrived(rss:RssResult)
 }
-//TODO: UITableViewController
+//TODO: MoviesTableViewController
 
-//TODO: UITableViewCell
-
-//TODO: struct Movie
-//TODO: struct Feed
-//TODO: struct RSSResult
+//TODO: MovieTableViewCell
 
 
 struct RssResult:Codable {
