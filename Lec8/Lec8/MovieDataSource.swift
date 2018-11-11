@@ -5,21 +5,28 @@ import UIKit
 
 //TODO:
 class MovieDataSource {
+
+    weak var delegate: MovieDataSourceDelegate?
+    
     func getMovies(){
         let url = URL(string: "https://rss.itunes.apple.com/api/v1/il/movies/top-movies/all/100/explicit.json")!
         
-        //session is like a browser -> GET
-        //session also caches our requests
         let session = URLSession(configuration: .default)
         
         session.dataTask(with: url) { (data, res, error) in
             
-           let rssResult = try! JSONDecoder().decode(RssResult.self, from: data!)
-           //
-           print(rssResult)
+        let rssResult = try! JSONDecoder().decode(RssResult.self, from: data!)
+
+        self.delegate?.moviesArrived(rss: rssResult)
+            
         }.resume()
-        
     }
+}
+
+//List of abstract Methods/Requirements
+//only classes may conform to this protocols
+protocol MovieDataSourceDelegate: class {
+    func moviesArrived(rss:RssResult)
 }
 //TODO: UITableViewController
 
