@@ -37,11 +37,11 @@ protocol MovieDataSourceDelegate: class {
 
 
 struct RssResult:Codable {
-    let feed:Feed
+    var feed:Feed
 }
 
 struct Feed:Codable {
-    let results:[Movie]
+    var results:[Movie]
 }
 
 struct Movie:Codable {

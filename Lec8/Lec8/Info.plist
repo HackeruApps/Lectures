@@ -6,11 +6,17 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>rss.itunes.apple.com</key>
-			<dict>
-				<key>NSIncludeSubdomains</key>
-				<true/>
-			</dict>
+            <key>rss.itunes.apple.com</key>
+            <dict>
+                <key>NSIncludeSubdomains</key>
+                <true/>
+            </dict>
+            
+            <key>is2-ssl.mzstatic.com</key>
+            <dict>
+                <key>NSIncludeSubdomains</key>
+                <true/>
+            </dict>
 		</dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
