@@ -1,11 +1,4 @@
-//
-//  SongTableViewController.swift
-//  Lec9
-//
-//  Created by hackeru on 14/11/2018.
-//  Copyright © 2018 hackeru. All rights reserved.
-//
-
+import SDWebImage
 import UIKit
 
 class SongTableViewController: UITableViewController, SongDataSourceDelegate {
@@ -64,7 +57,12 @@ class SongTableViewController: UITableViewController, SongDataSourceDelegate {
         cell.songArtist.text = song.artistName
         
         //image - cocoapods
+        let url = URL(string: song.artworkUrl100)!
         
+        cell.artistImage.sd_setImage(with: url)
+        
+        
+ 
         return cell
     }
 

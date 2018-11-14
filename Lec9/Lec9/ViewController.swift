@@ -1,12 +1,6 @@
-//
-//  ViewController.swift
-//  Lec9
-//
-//  Created by hackeru on 14/11/2018.
-//  Copyright © 2018 hackeru. All rights reserved.
-//
-
+ 
 import UIKit
+
 
 class ViewController: UIViewController {
 
