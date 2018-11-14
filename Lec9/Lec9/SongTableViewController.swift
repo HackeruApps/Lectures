@@ -9,6 +9,9 @@
 import UIKit
 
 class SongTableViewController: UITableViewController, SongDataSourceDelegate {
+    
+    var rssResult: RssResult?
+    
     func onResult(result: RssResult?, error: Error?) {
         //dispatchQueueMa
         if let error = error{
@@ -17,7 +20,8 @@ class SongTableViewController: UITableViewController, SongDataSourceDelegate {
             return
         }
         if let result = result{
-            print(result)
+            self.rssResult = result
+            tableView.reloadData()
         }
     }
     
@@ -35,33 +39,35 @@ class SongTableViewController: UITableViewController, SongDataSourceDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+ 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return rssResult?.feed.results.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "songcell", for: indexPath) as! SongTableViewCell
 
+        guard let song = rssResult?.feed.results[indexPath.row] else{
+            fatalError("Illegal Condintion.")
+        }
         // Configure the cell...
-
+        cell.songTitle.text = song.name
+        cell.songArtist.text = song.artistName
+        
+        //image - cocoapods
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
