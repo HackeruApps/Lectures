@@ -50,6 +50,23 @@ extension ViewController: IconsCollectionViewControllerDelegate{
     func didSelectIcon(_ icon: UIImage) {
         let imageView = UIImageView(image: icon)
         view.addSubview(imageView)
+        imageView.center = view.center
+        
+        //initial: Transform the imageView...
+        imageView.transform = CGAffineTransform(translationX: 0, y: -500)
+        
+        
+        //animate:
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 10, options: [], animations: {
+            //animate:
+              imageView.transform  = .identity
+        }) { (_) in
+           imageView.removeFromSuperview()
+        }
+        
+        
+            //{imageView.transform = .identity}
+        
     }
 }
 
