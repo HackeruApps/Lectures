@@ -1,14 +1,30 @@
 import UIKit
 
- 
+protocol IconsCollectionViewControllerDelegate:class {
+    func didSelectIcon(_ icon: UIImage)
+}
 
 class IconsCollectionViewController: UICollectionViewController {
 
     var arr = [UIImage]() //
+    weak var delegate:IconsCollectionViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //collectionView -> FlowLayout->itemSize
+        
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //size(width, height) //1/3
+        let padding = CGFloat(8)
+        let w = view.frame.width / 3 - padding
+        
+        layout.itemSize = CGSize(width: w, height: w)
+        layout.minimumInteritemSpacing = padding
+        
+        
+        
         arr.append(UIImage(named: "a")!)
         arr.append(UIImage(named: "b")!)
         arr.append(UIImage(named: "c")!)
@@ -16,6 +32,22 @@ class IconsCollectionViewController: UICollectionViewController {
         arr.append(UIImage(named: "e")!)
         arr.append(UIImage(named: "f")!)
         arr.append(UIImage(named: "g")!)
+        arr.append(UIImage(named: "h")!)
+        arr.append(UIImage(named: "i")!)
+        arr.append(UIImage(named: "j")!)
+        arr.append(UIImage(named: "k")!)
+        arr.append(UIImage(named: "l")!)
+        arr.append(UIImage(named: "m")!)
+        arr.append(UIImage(named: "n")!)
+        arr.append(UIImage(named: "o")!)
+        arr.append(UIImage(named: "p")!)
+        arr.append(UIImage(named: "q")!)
+        arr.append(UIImage(named: "r")!)
+        arr.append(UIImage(named: "s")!)
+        arr.append(UIImage(named: "t")!)
+        arr.append(UIImage(named: "u")!)
+        arr.append(UIImage(named: "v")!)
+        arr.append(UIImage(named: "w")!)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
  
@@ -51,10 +83,10 @@ class IconsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconcell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconcell", for: indexPath) as! IconsCollectionViewCell
     
         // Configure the cell
-    
+        cell.iconImage.image = arr[indexPath.item]
         return cell
     }
 
@@ -80,6 +112,7 @@ class IconsCollectionViewController: UICollectionViewController {
         return false
     }
 
+     
     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return false
     }
@@ -88,5 +121,8 @@ class IconsCollectionViewController: UICollectionViewController {
     
     }
     */
-
+   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let image = arr[indexPath.item]
+        delegate?.didSelectIcon(image)
+    }
 }

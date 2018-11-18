@@ -10,51 +10,82 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Icons-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lec10Part2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7P-16-sGL">
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="3qw-rU-FSm"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="H8C-pA-wHh" kind="embed" identifier="iconsEmbed" id="AJN-Lp-81X"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="X7P-16-sGL" secondAttribute="bottom" id="PCd-Yf-hpL"/>
+                            <constraint firstAttribute="trailing" secondItem="X7P-16-sGL" secondAttribute="trailing" id="RBK-pf-Nyh"/>
+                            <constraint firstItem="X7P-16-sGL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fkm-Du-MEr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mBH-kh-UpD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="xbZ-Ok-0iX">
+                    <navigationItem key="navigationItem" title="Icons" id="mBH-kh-UpD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xbZ-Ok-0iX">
                             <connections>
-                                <segue destination="H8C-pA-wHh" kind="show" id="GKF-8Y-nHP"/>
+                                <action selector="toggle:" destination="BYZ-38-t0r" id="N1R-mh-wPO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="heightConstraint" destination="3qw-rU-FSm" id="Xcx-R6-1Ik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="130"/>
+            <point key="canvasLocation" x="408.80000000000001" y="129.98500749625188"/>
         </scene>
         <!--Icons Collection View Controller-->
         <scene sceneID="V0S-Z4-JfC">
             <objects>
                 <collectionViewController id="H8C-pA-wHh" customClass="IconsCollectionViewController" customModule="Lec10Part2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Kjv-Bx-nil">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="icK-3a-OsC">
-                            <size key="itemSize" width="134" height="132"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="icK-3a-OsC">
+                            <size key="itemSize" width="175" height="191"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconcell" id="97k-xi-q34">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="132"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconcell" id="97k-xi-q34" customClass="IconsCollectionViewCell" customModule="Lec10Part2" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="134" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a" translatesAutoresizingMaskIntoConstraints="NO" id="bZU-Y5-vsT">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="191"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.76327771975717096" blue="0.0008328129697827702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bZU-Y5-vsT" firstAttribute="leading" secondItem="97k-xi-q34" secondAttribute="leading" id="F1s-aH-bX6"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZU-Y5-vsT" secondAttribute="trailing" id="Kse-ts-BNO"/>
+                                    <constraint firstItem="bZU-Y5-vsT" firstAttribute="top" secondItem="97k-xi-q34" secondAttribute="top" id="SGI-wB-6NT"/>
+                                    <constraint firstAttribute="bottom" secondItem="bZU-Y5-vsT" secondAttribute="bottom" id="hIB-dp-OTQ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="iconImage" destination="bZU-Y5-vsT" id="oMO-BQ-0D1"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -65,7 +96,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cas-dY-5hJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="130"/>
+            <point key="canvasLocation" x="1070" y="659"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3mI-rt-Zfe">
@@ -86,4 +117,7 @@
             <point key="canvasLocation" x="-281" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="a" width="96" height="96"/>
+    </resources>
 </document>

@@ -13,6 +13,7 @@
 		6D3B796C21A16D250022003A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B796B21A16D250022003A /* Assets.xcassets */; };
 		6D3B796F21A16D250022003A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B796D21A16D250022003A /* LaunchScreen.storyboard */; };
 		6D3B797721A16FEE0022003A /* IconsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B797621A16FEE0022003A /* IconsCollectionViewController.swift */; };
+		6D3B797921A187D70022003A /* IconsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B797821A187D70022003A /* IconsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6D3B796E21A16D250022003A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D3B797021A16D250022003A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D3B797621A16FEE0022003A /* IconsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsCollectionViewController.swift; sourceTree = "<group>"; };
+		6D3B797821A187D70022003A /* IconsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6D3B796D21A16D250022003A /* LaunchScreen.storyboard */,
 				6D3B797021A16D250022003A /* Info.plist */,
 				6D3B797621A16FEE0022003A /* IconsCollectionViewController.swift */,
+				6D3B797821A187D70022003A /* IconsCollectionViewCell.swift */,
 			);
 			path = Lec10Part2;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				6D3B796721A16D250022003A /* ViewController.swift in Sources */,
 				6D3B797721A16FEE0022003A /* IconsCollectionViewController.swift in Sources */,
 				6D3B796521A16D250022003A /* AppDelegate.swift in Sources */,
+				6D3B797921A187D70022003A /* IconsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
