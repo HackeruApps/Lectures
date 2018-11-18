@@ -1,14 +1,25 @@
-//
-//  ViewController.swift
-//  Lec10
-//
-//  Created by hackeru on 18/11/2018.
-//  Copyright © 2018 hackeru. All rights reserved.
-//
-
+ 
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBAction func hide(_ sender: UITapGestureRecognizer) {
+        dismiss(UIButton())
+    }
+    @IBAction func dismiss(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dialogView.transform =
+                CGAffineTransform(scaleX: 4, y: 1.5)
+                    .translatedBy(x: 0, y: -500)
+        }) { (done) in
+            self.blur.isHidden = true
+            self.dialogView.transform = CGAffineTransform.identity
+            self.dialogView.removeFromSuperview()
+        }
+    }
+    
+    
+    @IBOutlet weak var blur: UIVisualEffectView!
     
     @IBAction func transform(_ sender: UIButton) {
         //initial conditions
@@ -28,6 +39,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.4) {
             //cancel a transofrm?
             self.dialogView.transform = CGAffineTransform.identity
+            self.blur.isHidden = false
         }
     }
     @IBOutlet var dialogView: UIView!

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="TEo-fU-7mt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="TEo-fU-7mt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUT-s1-zzI">
@@ -36,21 +36,51 @@
                                     <action selector="transform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sh5-x4-FzI"/>
                                 </connections>
                             </button>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeY-L9-yHF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vt3-ng-9Tr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzx-S6-FSR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="BRN-g2-Crb">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="KZM-SP-tG7" appends="YES" id="5SS-jG-RDS"/>
+                                                </connections>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aUT-s1-zzI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yn-J2-CMt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aUT-s1-zzI" secondAttribute="bottom" constant="16" id="JcR-p2-00d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DCb-tg-G57" secondAttribute="bottom" constant="20" id="M2r-ma-1zI"/>
+                            <constraint firstAttribute="bottom" secondItem="aeY-L9-yHF" secondAttribute="bottom" id="Y3r-U5-AyE"/>
                             <constraint firstItem="TEo-fU-7mt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ahh-P4-ksc"/>
+                            <constraint firstAttribute="trailing" secondItem="aeY-L9-yHF" secondAttribute="trailing" id="bF8-AP-qND"/>
                             <constraint firstAttribute="bottom" secondItem="TEo-fU-7mt" secondAttribute="bottom" id="h3Z-Nt-uFq"/>
+                            <constraint firstItem="aeY-L9-yHF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mAJ-jr-dNc"/>
                             <constraint firstItem="DCb-tg-G57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mM8-pI-4kq"/>
                             <constraint firstItem="TEo-fU-7mt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rKC-pA-CSY"/>
+                            <constraint firstItem="aeY-L9-yHF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xcA-NE-9pi"/>
                             <constraint firstAttribute="trailing" secondItem="TEo-fU-7mt" secondAttribute="trailing" id="xzZ-Kf-KSn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="blur" destination="aeY-L9-yHF" id="N1P-Po-bNo"/>
                         <outlet property="dialogView" destination="4b9-bb-Ja8" id="tdq-Ku-EBT"/>
                     </connections>
                 </viewController>
@@ -80,6 +110,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZl-e7-XYq">
                                     <rect key="frame" x="0.0" y="84" width="176" height="28"/>
                                     <state key="normal" title="Login"/>
+                                    <connections>
+                                        <action selector="dismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0P-h1-esL"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -97,12 +130,17 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="gGq-Yg-RQj"/>
                 </view>
+                <tapGestureRecognizer id="KZM-SP-tG7">
+                    <connections>
+                        <action selector="hide:" destination="BYZ-38-t0r" id="xoE-lf-mdL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-46" y="12"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="526" height="350"/>
         <image name="back2" width="284" height="177"/>
+        <image name="large" width="6000" height="4000"/>
     </resources>
 </document>
