@@ -27,31 +27,43 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
+        
         initPlayers()
     }
     
     
+    func wiggle(_ sender: UITapGestureRecognizer) {
+        let img = sender.view!
+        //animate
+        UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat], animations: {
+            //Repeats forever, unless setAnimationRepeatCount
+            UIView.setAnimationRepeatCount(3)
+            img.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: { (_) in
+            img.transform = CGAffineTransform.identity
+        })
+    }
     @IBAction func cowTapped(_ sender: UITapGestureRecognizer) {
         print("Cow")
         cowPlayer?.play()
-        //NotificationCenter
+        wiggle(sender)
     }
     
     @IBAction func dogTapped(_ sender: UITapGestureRecognizer) {
         print("Dog")
         dogPlayer?.play()
+        wiggle(sender)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
