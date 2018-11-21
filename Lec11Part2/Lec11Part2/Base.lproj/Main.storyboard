@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Rs-gg-avp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lec11Part2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HGY-ir-k5F">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Hy-GI-nTh">
+                            <connections>
+                                <action selector="plus:" destination="BYZ-38-t0r" id="Bz6-qh-4VL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="OEU-2q-2of" id="q9b-nX-Vy6"/>
+                        <outlet property="descriptionTextField" destination="XnV-T1-1Ho" id="aXF-AK-pxf"/>
+                        <outlet property="dialogView" destination="Xnc-Pq-bYB" id="plc-ic-9H2"/>
+                        <outlet property="titleTextField" destination="9bp-hf-Lb3" id="HiI-b4-8zo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Xnc-Pq-bYB">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-hf-Lb3">
+                            <rect key="frame" x="16" y="16" width="268" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XnV-T1-1Ho">
+                            <rect key="frame" x="16" y="62" width="268" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OEU-2q-2of">
+                            <rect key="frame" x="16" y="172" width="268" height="162"/>
+                            <date key="date" timeIntervalSinceReferenceDate="564484757.74945998">
+                                <!--2018-11-21 09:19:17 +0000-->
+                            </date>
+                        </datePicker>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mS-VN-yOE">
+                            <rect key="frame" x="254" y="350" width="30" height="30"/>
+                            <state key="normal" title="Add"/>
+                            <connections>
+                                <action selector="addTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xa-i6-iDb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Pf8-hF-Go6" firstAttribute="bottom" secondItem="2mS-VN-yOE" secondAttribute="bottom" constant="20" id="5PM-iM-5Iq"/>
+                        <constraint firstItem="2mS-VN-yOE" firstAttribute="top" secondItem="OEU-2q-2of" secondAttribute="bottom" constant="16" id="Flj-XX-OdL"/>
+                        <constraint firstItem="OEU-2q-2of" firstAttribute="leading" secondItem="Pf8-hF-Go6" secondAttribute="leading" constant="16" id="N7f-A5-tbV"/>
+                        <constraint firstItem="Pf8-hF-Go6" firstAttribute="trailing" secondItem="OEU-2q-2of" secondAttribute="trailing" constant="16" id="d0z-vg-1tU"/>
+                        <constraint firstItem="Pf8-hF-Go6" firstAttribute="trailing" secondItem="2mS-VN-yOE" secondAttribute="trailing" constant="16" id="eR3-jo-2NZ"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Pf8-hF-Go6"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="90.400000000000006" y="93.103448275862078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wPJ-0c-5Qt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Rs-gg-avp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ara-ri-LlW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rdk-5y-CLD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzb-57-DVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-654" y="93"/>
+        </scene>
+    </scenes>
+</document>
