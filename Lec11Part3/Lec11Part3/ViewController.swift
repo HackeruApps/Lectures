@@ -22,18 +22,51 @@ class ViewController: UIViewController {
         if userNameTextField.hasText && passTextField.hasText{
             let name = userNameTextField.text!
             let pass = passTextField.text!
+            //let data = imageView.image.pngData()
+            let image = imageView.image!
+            let data = UIImagePNGRepresentation(image)
+            
+            let defaults = UserDefaults.standard
             
             if register{
-                
+                defaults.set(name, forKey: "user")
+                defaults.set(pass, forKey: "pass")
+                defaults.set(data, forKey: "image")
             }else{
                 //login
+                let n = defaults.string(forKey: "user")
+                let p = defaults.string(forKey: "pass")
+                
+                if n == name && p == pass{
+                    performSegue(withIdentifier: "loggedIn", sender: nil)
+                }
+            }
+        }else{
+            //animate the textfields with error.
+        }
+    }
+    @IBOutlet weak var passTextField: UITextField!{
+        didSet{
+            passTextField.text = UserDefaults.standard.string(forKey: "pass")
+        }
+    }
+    @IBOutlet weak var userNameTextField: UITextField!{
+        didSet{
+            userNameTextField.text = UserDefaults.standard.string(forKey: "user")
+        }
+    }
+    @IBOutlet weak var imageView: UIImageView!{
+        didSet{
+            if let data = UserDefaults.standard.data(forKey: "image"){
+                imageView.image = UIImage(data: data)
             }
         }
     }
-    @IBOutlet weak var passTextField: UITextField!
     
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +75,7 @@ class ViewController: UIViewController {
         //let ip = UIImagePickerController()
         let picker = UIImagePickerController()
         picker.delegate = self
+        //picker.sourceType = .camera //!
         //present
         present(picker, animated: true)
     }
