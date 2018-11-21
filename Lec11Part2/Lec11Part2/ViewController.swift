@@ -1,14 +1,9 @@
-//
-//  ViewController.swift
-//  Lec11Part2
-//
-//  Created by hackeru on 21/11/2018.
-//  Copyright © 2018 hackeru. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+ 
+    var tasks = [Task]()
+    
     @IBOutlet var dialogView: UIView!
     @IBAction func plus(_ sender: UIBarButtonItem) {
         //add dialogView as a Sub View
@@ -22,35 +17,52 @@ class ViewController: UIViewController {
         let title = titleTextField.text ?? ""
         let description = descriptionTextField.text ?? ""
         let date = datePicker.date
-        
+        //ref to defaults.
         let defaults = UserDefaults.standard
         
-        defaults.set(title, forKey: "title")
-        defaults.set(description, forKey: "description")
-        defaults.set(date, forKey: "date")
+
+        let task = Task(title: title,
+                        description: description,
+                        date: date)
         
+        tasks.append(task)//[task] ... [json]
+        var jsonArray = [Dictionary<String, Any>]()
+        for t in tasks{
+            jsonArray.append(t.dict)
+        }
+
+        //save!
+        defaults.set(jsonArray, forKey: "jsonArray")
+
         dialogView.removeFromSuperview()
     }
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var descriptionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
         let defaults = UserDefaults.standard
+        guard let arr = defaults.array(forKey: "jsonArray") as? [Dictionary<String, Any>] else{
+            return
+        }
         
-        let title = defaults.string(forKey: "title") ?? ""
-        let desc = defaults.string(forKey: "description") ?? ""
-        let date = defaults.object(forKey: "date") as? Date ?? Date()
+        for item in arr{
+           let task = Task.fromJson(item)
+           tasks.append(task)
+        }
+        print(tasks)
         
-        print(title, desc, date)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
