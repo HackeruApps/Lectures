@@ -14,6 +14,8 @@
 		6D2FE6B121AABD8F0005F49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE6B021AABD8F0005F49E /* Assets.xcassets */; };
 		6D2FE6B421AABD8F0005F49E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE6B221AABD8F0005F49E /* LaunchScreen.storyboard */; };
 		6D2FE6BC21AACD3E0005F49E /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FE6BB21AACD3E0005F49E /* PersonTableViewController.swift */; };
+		6D2FE6BF21AADC790005F49E /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FE6BD21AADC790005F49E /* Person+CoreDataClass.swift */; };
+		6D2FE6C021AADC790005F49E /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FE6BE21AADC790005F49E /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6D2FE6B321AABD8F0005F49E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2FE6B521AABD8F0005F49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2FE6BB21AACD3E0005F49E /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
+		6D2FE6BD21AADC790005F49E /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6D2FE6BE21AADC790005F49E /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		6D2FE69A21AABD8D0005F49E = {
 			isa = PBXGroup;
 			children = (
+				6D2FE6BD21AADC790005F49E /* Person+CoreDataClass.swift */,
+				6D2FE6BE21AADC790005F49E /* Person+CoreDataProperties.swift */,
 				6D2FE6A521AABD8D0005F49E /* Lec12CoreData */,
 				6D2FE6A421AABD8D0005F49E /* Products */,
 			);
@@ -144,6 +150,8 @@
 			files = (
 				6D2FE6BC21AACD3E0005F49E /* PersonTableViewController.swift in Sources */,
 				6D2FE6A921AABD8E0005F49E /* ViewController.swift in Sources */,
+				6D2FE6C021AADC790005F49E /* Person+CoreDataProperties.swift in Sources */,
+				6D2FE6BF21AADC790005F49E /* Person+CoreDataClass.swift in Sources */,
 				6D2FE6A721AABD8E0005F49E /* AppDelegate.swift in Sources */,
 				6D2FE6AF21AABD8F0005F49E /* Lec12CoreData.xcdatamodeld in Sources */,
 			);

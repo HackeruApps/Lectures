@@ -15,37 +15,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func addPerson(){
+    func addPerson(person: Person){
         //NSEntityDescription:
         let description =
             NSEntityDescription.entity(forEntityName: "Person", in: context)!
         
         //Managed Object
-        var person = NSManagedObject(entity: description, insertInto: context)
+        var person = Person(entity: description, insertInto: context)
         //set some properties
-        person.setValue("Moshe", forKey: "firstName")
-        person.setValue("Doe", forKey: "lastName")
-        person.setValue(18, forKey: "age")
+        person.firstName = "Moshe"//.setValue("Moshe", forKey: "firstName")
+        person.lastName = "Doe"//.setValue("Doe", forKey: "lastName")
+        person.age = 18 //.setValue(18, forKey: "age")
         saveContext()
     }
     
-    func fetchPeople(){
-        let peopleRequest = NSFetchRequest<NSManagedObject>(entityName: "Person") //NSFetchRequest<NSManagedObject>
-        //context->fetch
-        let personObjects:[NSManagedObject] = try! context.fetch(peopleRequest)
+    func fetchPeople()->[Person]{
+        let peopleRequest = NSFetchRequest<Person>(entityName: "Person")
         
-        for pObject in personObjects{
-            let firstName = pObject.value(forKey: "firstName") as! String
-            let lastName = pObject.value(forKey: "lastName") as! String
-            let age = pObject.value(forKey: "age") as! Int
-            
-            print(firstName, lastName, age)
-        }
+        let personObjects:[Person] = try! context.fetch(peopleRequest)
+        
+        return personObjects
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        addPerson()
-        fetchPeople()
         // Override point for customization after application launch.
         return true
     }
