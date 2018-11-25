@@ -14,6 +14,7 @@
 		6D2FE68B21AA83500005F49E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE68921AA83500005F49E /* LaunchScreen.storyboard */; };
 		6D2FE69321AA83B90005F49E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FE69221AA83B90005F49E /* Contact.swift */; };
 		6D2FE69521AA8E9B0005F49E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE69421AA8E9B0005F49E /* Settings.bundle */; };
+		6D2FE69721AA988F0005F49E /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FE69621AA988F0005F49E /* KeychainPasswordItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6D2FE68C21AA83500005F49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2FE69221AA83B90005F49E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		6D2FE69421AA8E9B0005F49E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		6D2FE69621AA988F0005F49E /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		6D2FE67F21AA834F0005F49E /* Lec12 */ = {
 			isa = PBXGroup;
 			children = (
+				6D2FE69621AA988F0005F49E /* KeychainPasswordItem.swift */,
 				6D2FE68021AA83500005F49E /* AppDelegate.swift */,
 				6D2FE68221AA83500005F49E /* ViewController.swift */,
 				6D2FE69221AA83B90005F49E /* Contact.swift */,
@@ -146,6 +149,7 @@
 				6D2FE69321AA83B90005F49E /* Contact.swift in Sources */,
 				6D2FE68321AA83500005F49E /* ViewController.swift in Sources */,
 				6D2FE68121AA83500005F49E /* AppDelegate.swift in Sources */,
+				6D2FE69721AA988F0005F49E /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

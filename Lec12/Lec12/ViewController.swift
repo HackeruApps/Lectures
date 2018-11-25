@@ -1,10 +1,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+
+         
         let c = Contact(firstName: "Moses", lastName: "Doe")
         //usage of NSCoding
         let cData = NSKeyedArchiver.archivedData(withRootObject: c)
@@ -18,6 +19,28 @@ class ViewController: UIViewController {
         let ob = NSKeyedUnarchiver.unarchiveObject(with: readData!)
         
         print(ob)
+        
+        
+        
+        let name = UserDefaults.standard.string(forKey: "name") ?? ""
+        
+        let volume = UserDefaults.standard.integer(forKey: "volume")
+        
+        print(name, volume)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
