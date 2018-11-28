@@ -29,6 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             VALUES(?, ?, ?)
                        """
     
+    let selectString = "SELECT * FROM characters;"
+    //use prepared stement
+    func selectCharacter(){
+        var stmt:OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, selectString, -1, &stmt, nil) == SQLITE_OK{
+            //use the stmt
+            while sqlite3_step(stmt) == SQLITE_ROW{
+                //0 based
+                let id = sqlite3_column_int(stmt, 0) //Int32
+                let name = String(cString: sqlite3_column_text(stmt, 1))
+                let last = String(cString: sqlite3_column_text(stmt, 2))
+                let serial = sqlite3_column_int(stmt, 3)
+                
+                print(id, name, last, serial)
+            }
+        }else{
+            print("Could not prepare")
+        }
+        
+    }
     
     func insert(){
         var preparedStatement:OpaquePointer? = nil
@@ -46,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //use the statement
             if sqlite3_step(preparedStatement) == SQLITE_DONE{
-               print("Insreted")
+               print("Inserted")
             }else{
                 print("Can't insert")
             }
@@ -101,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        selectCharacter()
        // createTable()
         // Override point for customization after application launch.
         return true
