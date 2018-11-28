@@ -12,8 +12,45 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        query("SELECT * FROM Characters WHERE id=?", 2)
     }
+    
+    
+    func query(_ sql:String,_ args:Any...){
+        print(sql)
+        
+        for a in args{
+            print(a)
+            if a is Int{
+                print(a)
+            }
+        }
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

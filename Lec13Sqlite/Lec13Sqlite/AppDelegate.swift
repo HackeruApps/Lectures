@@ -8,120 +8,16 @@
 
 import UIKit
 import CoreData
-import SQLite3
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let createTableString = """
-                        CREATE TABLE characters(id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                firstName TEXT NOT NULL,
-                                                lastName TEXT NOT NULL,
-                                                serialNumber INTEGER
-                                               )
-                      """
-    
-    let dropTableString = "DROP TABLE characters"
-    
-    //prepared Statment: ? are placeholders (we bind data to ?)
-    let insertString = """
-                            INSERT INTO characters(firstName, lastName, serialNumber)
-                            VALUES(?, ?, ?)
-                       """
-    
-    let selectString = "SELECT * FROM characters;"
-    //use prepared stement
-    func selectCharacter(){
-        var stmt:OpaquePointer? = nil
-        if sqlite3_prepare_v2(db, selectString, -1, &stmt, nil) == SQLITE_OK{
-            //use the stmt
-            while sqlite3_step(stmt) == SQLITE_ROW{
-                //0 based
-                let id = sqlite3_column_int(stmt, 0) //Int32
-                let name = String(cString: sqlite3_column_text(stmt, 1))
-                let last = String(cString: sqlite3_column_text(stmt, 2))
-                let serial = sqlite3_column_int(stmt, 3)
-                
-                print(id, name, last, serial)
-            }
-        }else{
-            print("Could not prepare")
-        }
-        
-    }
-    
-    func insert(){
-        var preparedStatement:OpaquePointer? = nil
-        //convert the insertString to a prepared statement
-        
-        if sqlite3_prepare_v2(db, insertString,-1, &preparedStatement, nil) == SQLITE_OK{
-            let serialNumber: Int32 = 1
-            let firstName: NSString = "Ned"
-            let lastName: NSString = "Stark"
-            
-            //bind the ?
-            sqlite3_bind_int(preparedStatement, 3, serialNumber)
-            sqlite3_bind_text(preparedStatement,1, firstName.utf8String, -1, nil)
-            sqlite3_bind_text(preparedStatement,2, lastName.utf8String, -1, nil)
-            
-            //use the statement
-            if sqlite3_step(preparedStatement) == SQLITE_DONE{
-               print("Inserted")
-            }else{
-                print("Can't insert")
-            }
-        }else{
-            print("Can't prepare statememnt")
-        }
-        sqlite3_finalize(preparedStatement)
-    }
-    
-    var db = openDatabase()
-    
-    func createTable(){
-        if  sqlite3_exec(db, createTableString, nil, nil, nil) != SQLITE_OK {
-            print("Cant Create Table")
-            let errMessage = sqlite3_errmsg(db)
-            let errString = String(cString: errMessage!)
-            print(errString)
-        }else{
-            print("Table Created")
-        }
-    }
-    
-    func dropTable(){
-        if  sqlite3_exec(db, dropTableString, nil, nil, nil) != SQLITE_OK {
-            print("Cant Drop Table")
-            let errMessage = sqlite3_errmsg(db)
-            let errString = String(cString: errMessage!)
-            print(errString)
-        }else{
-            print("Table Dropped")
-        }
-    }
-    
-    
-    static func openDatabase()->OpaquePointer?{
-        //new file->app dirs
-        let fm = FileManager.default
-        let documents = fm.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let dbPath = documents.absoluteString + "mydb"
-        fm.createFile(atPath: dbPath, contents: Data(), attributes: nil)
-        
-        var db:OpaquePointer? = nil
-        
-        if(sqlite3_open(dbPath, &db) == SQLITE_OK){
-            print("DB is open")
-            return db
-        }else{
-            fatalError("Can't open data base, did you create the file?")
-        }
-    }
-    
+   
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        selectCharacter()
+      
        // createTable()
         // Override point for customization after application launch.
         return true
