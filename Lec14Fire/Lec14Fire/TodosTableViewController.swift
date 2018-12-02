@@ -13,6 +13,8 @@ import FirebaseDatabase
 
 class TodosTableViewController: UITableViewController {
 
+    var todos:[Todo] = [] //empty array
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let user = Auth.auth().currentUser else{
@@ -20,6 +22,23 @@ class TodosTableViewController: UITableViewController {
             return
         }
         print("Welcome, \(user.email!)")
+        
+        let ref = Database.database().reference(withPath: "todos")
+        ref.observe(.childAdded) { (item) in
+            let item = item.value as! [String: Any]
+            let title = item["title"] as! String
+            let desc = item["todoDescription"] as! String
+            self.todos.append(Todo(title: title, todoDescription: desc))
+            
+            //self.tableView.reloadData()
+            let indexPath = IndexPath(row: self.todos.count - 1, section: 0)
+            
+            DispatchQueue.main.async {
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+            
+        }
+        
     }
     
     
@@ -83,23 +102,25 @@ class TodosTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return todos.count
     }
-
-    /*
+ 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-
+        let todo = todos[indexPath.row]
+        
+        cell.textLabel?.text = todo.title
+        cell.detailTextLabel?.text = todo.todoDescription
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
