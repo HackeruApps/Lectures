@@ -1,0 +1,6 @@
+framework module Pods_Lec14Fire {
+  umbrella header "Pods-Lec14Fire-umbrella.h"
+
+  export *
+  module * { export * }
+}
