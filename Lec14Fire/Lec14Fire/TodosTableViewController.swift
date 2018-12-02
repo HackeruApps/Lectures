@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
+
 
 class TodosTableViewController: UITableViewController {
 
@@ -48,6 +50,25 @@ class TodosTableViewController: UITableViewController {
         //3) add an action -> save(...), import FirebaseDatabase
         alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
             //save data to firebase
+            let title = alertVC.textFields?[0].text ?? ""
+            let description = alertVC.textFields?[1].text ?? ""
+            
+            let todo = Todo(title: title, todoDescription: description).json
+            
+            //ref to a json node -> +new Row
+            let ref = Database.database().reference(withPath: "todos")
+            
+            //todos -> add row
+            let newRow = ref.childByAutoId()
+            
+            newRow.setValue(todo, withCompletionBlock: { (err, ref) in
+                if let err = err{
+                    print("error: \(err)")
+                }else{
+                    print("done")
+                }
+            })
+            
         }))
         
         //4) present the vc
