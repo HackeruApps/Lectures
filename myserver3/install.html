@@ -1,0 +1,53 @@
+<h1>הוראות התקנה:</h1>
+
+
+<p>
+    Sign up / In
+    install the heroku cli:
+
+</p>
+
+<ol>
+    <li>close vscdoe</li>
+    <li>vscode -> open the project folder</li>
+    <li>$ heroku login</li>
+    <li>$ heroku create oron2</li>
+
+
+    <!--local empty git repo (all versions are stored in this folder)-->
+    <!-- creates a hidden folder myserver2/.git/ -->
+    <li>$ git init</li>
+
+     <!-- add all files to git monitoring-->
+     <li>$ git add  .  </li>
+
+     <!-- backup the files that changed-->
+     <!-- -m stands for commit message: -->
+     <!-- the message must be consise - describe the last changes -->
+     <li>$ git commit -m "initial commit"</li>
+
+     <!-- add a remote git server (we push to remotes)-->
+     <li>$ heroku git:remote -a oron2</li>
+    
+     <!--send the local changes to the REMOTE git server-->
+     <li>$ git push heroku master</li>
+
+
+</ol>
+
+
+<h2>Upload changes to Heroku</h2>
+<ol>
+    <li>git add .</li>
+    <li>git commit -m "add start script AND set port to envirment variable"</li>
+    <li>git push heroku master</li>
+</ol>
+
+<!-- git add . && git commit -m "heroku" && git push heroku master && heroku open -->
+
+
+<h3>Database: </h3>
+<p>add plugin in heroku website</p>
+
+<!-- work with postgress database from node -->
+<p>$ npm install pg</p>
