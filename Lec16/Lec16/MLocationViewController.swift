@@ -13,6 +13,8 @@ class MLocationViewController: UIViewController, MLocationManagerDelegate {
     func location(_ location: CLLocation) {
         //DispatchQueue
         locationLabel.text = "\(location.coordinate)"
+        
+        locationLabel.sizeToFit()
     }
     
     @IBOutlet weak var locationLabel: UILabel!

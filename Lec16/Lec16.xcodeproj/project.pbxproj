@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D1672C321BD1469008379F6 /* MMapViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1672C221BD1469008379F6 /* MMapViewController.swift.swift */; };
+		6D1672C621BD457F008379F6 /* PizzaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1672C521BD457F008379F6 /* PizzaAnnotation.swift */; };
 		6D56917421BCFC6F00DCDA39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56917321BCFC6F00DCDA39 /* AppDelegate.swift */; };
 		6D56917921BCFC7000DCDA39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D56917721BCFC7000DCDA39 /* Main.storyboard */; };
 		6D56917C21BCFC7000DCDA39 /* Lec16.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D56917A21BCFC7000DCDA39 /* Lec16.xcdatamodeld */; };
@@ -20,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		6D1672C221BD1469008379F6 /* MMapViewController.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMapViewController.swift.swift; sourceTree = "<group>"; };
+		6D1672C421BD3ECC008379F6 /* HackeruRun.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HackeruRun.gpx; sourceTree = "<group>"; };
+		6D1672C521BD457F008379F6 /* PizzaAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaAnnotation.swift; sourceTree = "<group>"; };
 		6D56917021BCFC6F00DCDA39 /* Lec16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lec16.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D56917321BCFC6F00DCDA39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D56917821BCFC7000DCDA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				6D56918221BCFC7000DCDA39 /* Info.plist */,
 				6D56917A21BCFC7000DCDA39 /* Lec16.xcdatamodeld */,
 				6D56918B21BD053600DCDA39 /* MLocationManager.swift */,
+				6D1672C421BD3ECC008379F6 /* HackeruRun.gpx */,
+				6D1672C521BD457F008379F6 /* PizzaAnnotation.swift */,
 			);
 			path = Lec16;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				6D1672C321BD1469008379F6 /* MMapViewController.swift.swift in Sources */,
 				6D56917421BCFC6F00DCDA39 /* AppDelegate.swift in Sources */,
 				6D56918C21BD053600DCDA39 /* MLocationManager.swift in Sources */,
+				6D1672C621BD457F008379F6 /* PizzaAnnotation.swift in Sources */,
 				6D56917C21BCFC7000DCDA39 /* Lec16.xcdatamodeld in Sources */,
 				6D56918E21BD0AE400DCDA39 /* MLocationViewController.swift in Sources */,
 			);
